@@ -111,7 +111,7 @@ class Teacher {
   async getTeacherById(req, res) {
     logger.debug(`get teacherById api call`);
 
-    let teacherId = req.query.teacherId;
+    let teacherId = req.params.teacherId;
 
     const teacher = await teacherModel.findOne({ _id: teacherId, isDeleted: false })
     if (!teacher) {
