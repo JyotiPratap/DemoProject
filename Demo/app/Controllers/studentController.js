@@ -49,8 +49,7 @@ class Student {
 
 
   async login(req, res) {
-    console.log("jj");
-    logger.debug(`teacher login api called for ${req.body}`);
+    logger.debug(`student login api called for ${req.body}`);
 
     const {
       error: fielderror,
@@ -62,10 +61,10 @@ class Student {
         fielderror.details[0].message,
       );
     }
-    const findTeacher = await studentModel.findOne({ email});
+    const findStudent = await studentModel.findOne({ email});
 
-    if (!findTeacher) {
-      logger.debug(`teacher not found with this email : ${email}`);
+    if (!findStudent) {
+      logger.debug(`student not found with this email : ${email}`);
 
       throw new NotFoundError('email not registered');
     }
@@ -73,13 +72,13 @@ class Student {
 
     const isPasswordCorrect = await studentModel.findOne({password});
     if(!isPasswordCorrect){
-      logger.debug(`teacher not found with this password : ${password}`);
+      logger.debug(`student not found with this password : ${password}`);
 
       throw new NotFoundError('password not correct');
     }
 
     //Generate token
-    let userId = findTeacher._id;
+    let userId = findStudent._id;
     let token = await jwt.sign(
       {
         userId: userId,
@@ -89,8 +88,8 @@ class Student {
         expiresIn: JWT_EXPIRES_IN 
       });
 
-      findTeacher.set({ last_login_time: now(), invalid_attempts: 0 });
-      findTeacher.save();
+      findStudent.set({ last_login_time: now(), invalid_attempts: 0 });
+      findStudent.save();
 
     return res.status(200).json({
       userId, token
@@ -110,6 +109,20 @@ class Student {
 
 
 
+  async getStudentById(req, res) {
+    logger.debug(`get teacherById api call`);
+
+    let studentId = req.query.studentId;
+
+    const student = await studentModel.findOne({ _id: studentId, isDeleted: false })
+    if (!student) {
+      throw new NotFoundError('student not found');
+    }
+    return res.status(200).json({
+      student: student
+    })
+
+  }
 
 
 

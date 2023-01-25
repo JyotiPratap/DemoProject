@@ -9,14 +9,15 @@ const student = new Student();
 
 
 router.post('/registerTeacher', teacher.registerTeacher);
-router.post('/login', teacher.login);
+router.post('/loginTeacher', teacher.login);
 router.get('/getAllTeacher', teacher.getAllTeacher);
 router.get('/getTeacherById/:teacherId',teacher.getTeacherById);
 
 
 router.post('/registerStudent', student.registerStudent)
-router.post('/login', student.login)
+router.post('/loginStudent', student.login);
 router.get('/getAllStudent', student.getAllStudent)
+router.get('/getStudentById/:studentId',student.getStudentById);
 
 
 

@@ -18,10 +18,10 @@ module.exports = function (server) {
   .unless({
     path: [
       '/api/v1/teacher/registerTeacher',
-      '/api/v1/teacher/login',
+      '/api/v1/teacher/loginTeacher',
       '/api/v1/teacher/getAllTeacher',
       '/api/v1/student/registerStudent',
-      '/api/v1/student/login',
+      '/api/v1/student/loginStudent',
       '/api/v1/student/getAllStudent',
     ],
   }));

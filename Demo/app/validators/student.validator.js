@@ -18,7 +18,7 @@ function validateRegisteredField(student) {
 }
 
 
-function validateLoginFeild(teacher) {
+function validateLoginFeild(student) {
   const message = 'Password must be of atleast 8 characters. '
   + 'It should have One UpperCase,One LowerCase,One Number and One SpecialCase Character';
   const schema = Joi.object({
@@ -27,7 +27,7 @@ function validateLoginFeild(teacher) {
       .regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,30}$/)
       .message(message),
   });
-  const result = schema.validate(teacher);
+  const result = schema.validate(student);
   return result;
 }
 

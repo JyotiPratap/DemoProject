@@ -6,7 +6,7 @@ const {
   JWT_SECRET, JWT_EXPIRES_IN,
 } = require('../../config/envs');
 
-
+const { NotFoundError } = require('../errors/not_found_error');
 const { InvalidInputError } = require('../errors/invalid_input_error');
 const { validateRegisteredField ,validateLoginFeild} = require('../validators/teacher.validator');
 
@@ -39,6 +39,8 @@ class Teacher {
       regiTeacher: regiTeacher
     });
   };
+
+
 
 
   async login(req, res) {
