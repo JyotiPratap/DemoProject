@@ -11,32 +11,13 @@ const student = new Student();
 router.post('/registerTeacher', teacher.registerTeacher);
 router.post('/loginTeacher', teacher.login);
 router.get('/getAllTeacher', teacher.getAllTeacher);
-router.get('/getTeacherById/:teacherId',teacher.getTeacherById);
+router.get('/getTeacherById/:teacherId', teacher.getTeacherById);
 
 
 router.post('/registerStudent', student.registerStudent)
 router.post('/loginStudent', student.login);
 router.get('/getAllStudent', student.getAllStudent)
-router.get('/getStudentById/:studentId',student.getStudentById);
-
-
-
-
-
-
-
-
-
-// router.post('/loginTeacher', teacherController.login)
-// router.get('/getAllTeacher', teacherController.getAllTeacher);
-// router.get('/getTeacherById/:teacherId',middleware.authorization,teacherController.getTeacherById);
-
-
-// router.post('/registerStudent', studentController.registerStudent)
-// router.post('/loginStudent', studentController.login)
-// router.get('/getAllStudent', middleware.authentication, studentController.getAllStudent);
-// router.get('/getStudentById/:studentId',middleware.authorization,studentController.getStudentById);
-
+router.get('/getStudentById/:studentId', student.getStudentById);
 
 
 
