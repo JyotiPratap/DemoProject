@@ -44,7 +44,6 @@ class Teacher {
 
 
   async login(req, res) {
-    console.log("jj");
     logger.debug(`teacher login api called for ${req.body}`);
 
     const {

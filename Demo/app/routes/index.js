@@ -1,6 +1,7 @@
 require('express-async-errors');
 require('../../config/database')();
 const express = require('express')
+const morgan = require('morgan');
 const route_teacher = require('./route.js');
 const route_student = require('./route.js');
 const teacherModel = require("../Model/teacher.js");
@@ -10,10 +11,11 @@ const { JWT_SECRET } = require('../../config/envs');
 const { expressjwt: jwt } = require('express-jwt');
 
 module.exports = function (server) {
+
+
+  server.use(morgan('common'));
   server.use(express.json())
   server.use(express.urlencoded({ extended: true }));
-
-
   server.use(jwt({ secret: JWT_SECRET, algorithms: ['HS256'] })
     .unless({
       path: [
