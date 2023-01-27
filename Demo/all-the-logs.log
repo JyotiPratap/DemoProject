@@ -1,24 +1,2 @@
-[2023-01-25T16:56:37.662] [INFO] db_connection - Mongo database connected
-[2023-01-25T16:56:37.665] [INFO] db_connection - Connected to MongoDB...
-[2023-01-25T16:56:48.506] [DEBUG] hii - getAll teacher api call
-[2023-01-25T16:56:55.038] [ERROR] error - No authorization token was found UnauthorizedError: No authorization token was found
-    at new UnauthorizedError (/home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/errors/UnauthorizedError.js:22:28)
-    at /home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/index.js:117:39
-    at step (/home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/index.js:33:23)
-    at Object.next (/home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/index.js:14:53)
-    at /home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/index.js:8:71
-    at new Promise (<anonymous>)
-    at __awaiter (/home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/index.js:4:12)
-    at middleware (/home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-jwt/dist/index.js:70:16)
-    at /home/jyoti/Desktop/Demo/DemoProject/Demo/node_modules/express-unless/dist/index.js:52:13
-    at Generator.next (<anonymous>) {
-  code: 'credentials_required',
-  status: 401,
-  inner: { message: 'No authorization token was found' }
-}
-[2023-01-25T16:56:59.185] [DEBUG] hii - getAll teacher api call
-[2023-01-25T16:57:22.242] [INFO] db_connection - Mongo database connected
-[2023-01-25T18:14:43.227] [INFO] db_connection - Connected to MongoDB...
-[2023-01-25T18:21:21.516] [INFO] db_connection - Mongo database connected
-[2023-01-25T18:21:21.518] [INFO] db_connection - Connected to MongoDB...
-[2023-01-25T18:21:34.805] [DEBUG] hii - get teacherById api call
+[2023-01-27T15:53:22.572] [INFO] db_connection - Mongo database connected
+[2023-01-27T15:53:22.579] [INFO] db_connection - Connected to MongoDB...
